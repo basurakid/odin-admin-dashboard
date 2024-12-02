@@ -1,13 +1,68 @@
+@import url(https://fonts.bunny.net/css?family=alata:400|averia-serif-libre:700i);
+
+
+
 * {
     margin: 0;
     padding: 0;
 }
-.wrapper{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    color: white;
+
+html, body, .wrapper {
+    height: 100%;
 }
 
-aside {
-    background-color: #f0abfc;
+.wrapper{
+    display: grid;
+    grid-template: 1fr 4fr / 1fr 4fr;
+    font-family: aclonica, sans-serif;
+}
+
+.sidebar {
+    background-color: #5AB286;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 2em;
+    color: white;
+    font-family: Alata, sans-serif;
+}
+.logo h1 {
+    display: inline;
+    justify-self: start;
+    font-family: "Averia Serif Libre" , sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+.logo {
+    font-size: 2em;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    place-items: center;
+}   
+
+.sidebar ul {
+    font-size: 1.5em;
+    list-style-type: none;
+}
+
+.sidebar li {
+    padding: 5px 1em;
+}
+
+.sidebar li:hover {
+    padding: 5px 1.2em;
+    border-left: 4px solid white;
+    background-color: #70aa8d;
+}
+
+.searchbar button {
+    width: 50px;
+    border: 0;
+    box-shadow: none;
+    background-color: white;
+}
+
+.searchbar input {
+    border: 2px solid gainsboro;
+    border-radius: 10px;
 }
