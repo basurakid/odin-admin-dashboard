@@ -1,7 +1,6 @@
 @import url(https://fonts.bunny.net/css?family=alata:400|averia-serif-libre:700i);
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -11,21 +10,30 @@ html, body, .wrapper {
     height: 100%;
 }
 
+:root {
+    --palette-green: #74B35B;
+    --palette-green-light: #89bf73;
+    --palette-white: #F8F5EC;
+    --palette-gray: #d5d5d8;
+    --palette-black: #8C7A62;
+}
+
 .wrapper{
     display: grid;
-    grid-template: 1fr 4fr / 1fr 4fr;
+    grid-template: 1fr 5fr / 1fr 5fr;
     font-family: aclonica, sans-serif;
 }
 
 .sidebar {
-    background-color: #5AB286;
+    background-color: var(--palette-green);
     grid-row: 1 / -1;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     gap: 2em;
-    color: white;
+    color: var(--palette-white);
     font-family: Alata, sans-serif;
 }
+
 .logo h1 {
     display: inline;
     justify-self: start;
@@ -33,12 +41,17 @@ html, body, .wrapper {
     font-weight: 700;
     font-style: italic;
 }
+
 .logo {
-    font-size: 2em;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    place-items: center;
-}   
+    font-size: 3rem;
+    display: flex;
+    
+}
+
+.logo > * {
+    padding: 5px;
+    
+}
 
 .sidebar ul {
     font-size: 1.5em;
@@ -46,23 +59,120 @@ html, body, .wrapper {
 }
 
 .sidebar li {
-    padding: 5px 1em;
+    padding: 5px 1rem;
+    letter-spacing: 3px;
 }
 
 .sidebar li:hover {
     padding: 5px 1.2em;
-    border-left: 4px solid white;
-    background-color: #70aa8d;
+    background-color: var(--palette-green-light);
 }
 
-.searchbar button {
-    width: 50px;
+.header {
+    background-color: var(--palette-white);
+    display: grid;
+    grid-template-columns: 4fr 0.6fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    padding: 1rem;
+    color: #483f33;
+    background-color: #F5F5D9;
+}
+
+.header button {
+    background-color: var(--palette-green);
+    border: 0px;
+    padding: 4px 16px;
+    border-radius: 20px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+}
+
+.searchbar button, .notifications button {
     border: 0;
     box-shadow: none;
-    background-color: white;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .searchbar input {
-    border: 2px solid gainsboro;
+    border: 2px solid #C4B9AB;
     border-radius: 10px;
+    height: 30px;
+    width: 80%;
+    margin-right: 4rem
 }
+
+.searchbar img, .notifications img {
+    max-width: 30px;
+}
+
+.notifications {
+    justify-self: flex-end;
+}
+
+.buttons {
+    justify-self: flex-end;
+    grid-column: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+}
+
+.buttons button {
+    border-radius: 50%;
+    padding: 8px 10px;
+}
+
+.buttons img {
+max-width: 25px;
+}
+
+.user-info {
+    margin-right: 7%;
+
+    font-size: 1.3rem;
+    font-family: "Averia Serif Libre";
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+
+    grid-column: 3;
+}
+
+.user-info img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid #C4B9AB;
+}
+
+.welcome {
+    grid-row: 2;
+    font-family: alata, sans-serif;
+    margin-left: 4rem;
+}
+
+.welcome :last-child {
+    font-size: 1.5rem;
+}
+
+main {
+    background-color: var(--palette-white);
+    display: grid;
+    grid-template-columns: repeat();
+}
+
+main h2 {
+    font-family: "Averia Serif Libre";
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+article {}
