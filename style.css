@@ -9,19 +9,22 @@
 html, body, .wrapper {
     height: 100%;
 }
+p {
+    text-wrap: pretty;
+}
 
 :root {
     --palette-green: #74B35B;
     --palette-green-light: #89bf73;
     --palette-white: #F8F5EC;
-    --palette-gray: #d5d5d8;
-    --palette-black: #8C7A62;
+    --palette-light-brown: #C4B9AB;
+    --palette-brown: #483f33;
 }
 
 .wrapper{
     display: grid;
     grid-template: 1fr 5fr / 1fr 5fr;
-    font-family: aclonica, sans-serif;
+    font-family: alata, sans-serif;
 }
 
 .sidebar {
@@ -45,12 +48,15 @@ html, body, .wrapper {
 .logo {
     font-size: 3rem;
     display: flex;
-    
 }
 
 .logo > * {
     padding: 5px;
     
+}
+
+.logo svg {
+    transform: rotate(90deg);
 }
 
 .sidebar ul {
@@ -71,12 +77,12 @@ html, body, .wrapper {
 .header {
     background-color: var(--palette-white);
     display: grid;
-    grid-template-columns: 4fr 0.6fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
-    padding: 1rem;
-    color: #483f33;
-    background-color: #F5F5D9;
+    padding: 1.5rem;
+    color: var(--palette-brown);
+    row-gap: 1rem;
 }
 
 .header button {
@@ -91,7 +97,7 @@ html, body, .wrapper {
     align-items: center;
 }
 
-.searchbar button, .notifications button {
+.searchbar button, .user-info button {
     border: 0;
     box-shadow: none;
     background-color: transparent;
@@ -99,27 +105,24 @@ html, body, .wrapper {
 }
 
 .searchbar input {
-    border: 2px solid #C4B9AB;
+    border: 2px solid var(--palette-light-brown);
     border-radius: 10px;
     height: 30px;
     width: 80%;
     margin-right: 4rem
 }
 
-.searchbar img, .notifications img {
+.searchbar img, .user-info button>img {
     max-width: 30px;
 }
 
-.notifications {
-    justify-self: flex-end;
-}
 
 .buttons {
     justify-self: flex-end;
     grid-column: 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
+    gap: 1rem;
 }
 
 .buttons button {
@@ -132,8 +135,6 @@ max-width: 25px;
 }
 
 .user-info {
-    margin-right: 7%;
-
     font-size: 1.3rem;
     font-family: "Averia Serif Libre";
 
@@ -145,12 +146,12 @@ max-width: 25px;
     grid-column: 3;
 }
 
-.user-info img {
+.pfp {
     border-radius: 50%;
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border: 2px solid #C4B9AB;
+    border: 2px solid var(--palette-light-brown);
 }
 
 .welcome {
@@ -165,14 +166,90 @@ max-width: 25px;
 
 main {
     background-color: var(--palette-white);
+    padding: 0 2rem;
+
     display: grid;
-    grid-template-columns: repeat();
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+
+    font-family: alata, sans;
+    color: var(--palette-brown);
 }
 
-main h2 {
+.cards {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(340px, 1fr));
+    grid-template-rows: 50px 300px;
+    gap: 1rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+}
+
+.cards h2 {
     font-family: "Averia Serif Libre";
     font-size: 2rem;
-    padding: 1rem;
+    grid-column: 1 / -1;
 }
 
-article {}
+article {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+    justify-content: space-between;
+    align-content: start;
+
+    background-color: var(--palette-light-brown);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 0 var(--palette-light-brown);
+    padding: 1rem;
+
+    max-height: 250px;
+}
+
+article h3 {
+    grid-column: 1 / -1;
+}
+
+article img {
+    width: 150px;
+    height: 150px;
+    justify-self: center;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0 5px;
+}
+
+article p {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.announcement {
+    margin-left: 1.5rem;
+    height: 300px
+}
+
+.announcement h2 {
+    font-family: "Averia Serif Libre";
+    font-size: 2rem;
+    grid-column: 1 / -1;
+    margin-bottom: 27px;
+}
+
+.announcement div {
+    background-color: var(--palette-light-brown);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 0 var(--palette-light-brown);
+    padding: 1rem;
+
+    max-width: 400px;
+}
+
+.announcement p {
+    margin-bottom: 0.5rem;
+}
+
+main p {
+    line-height: 1.5rem;
+}
